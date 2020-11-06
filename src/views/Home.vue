@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <h1 class="title">我是标题</h1>
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -16,3 +17,10 @@ export default {
   }
 }
 </script>
+<style scoped>
+.home {
+  & .title {
+    color: red;
+  }
+}
+</style>

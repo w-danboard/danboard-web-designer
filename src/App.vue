@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1 class="title">我是标题</h1>
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
   </div>
@@ -17,7 +18,7 @@ import HelloWorld from './components/HelloWorld.vue';
 export default class App extends Vue {}
 </script>
 
-<style>
+<style lang="postcss" scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,5 +26,8 @@ export default class App extends Vue {}
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  & .title {
+    color: red;
+  }
 }
 </style>
