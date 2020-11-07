@@ -1,18 +1,17 @@
 <template>
   <div id="app">
-    <h1 class="title">我是标题</h1>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <router-view></router-view>
+    <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+// import HelloWorld from './components/HelloWorld.vue';
 
 @Component({
   components: {
-    HelloWorld,
+    // HelloWorld,
   },
 })
 export default class App extends Vue {}
@@ -20,14 +19,7 @@ export default class App extends Vue {}
 
 <style lang="postcss" scoped>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-  & .title {
-    color: red;
-  }
+ width: 100%;
+ height: 100%;
 }
 </style>
