@@ -1,7 +1,7 @@
 module.exports = {
   plugins: {
     'postcss-import': {
-      path: ['src/assets/styles']
+      path: ['src/styles']
     },
     'postcss-preset-env': {
       features: {
