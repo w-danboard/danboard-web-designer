@@ -22,11 +22,11 @@ Vue.use(VueRouter)
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    redirect: '/login'
+    redirect: 'login'
   },
   {
     path: '/login',
-    name: 'login',
+    name: 'app_login',
     component: Login,
     meta: {
       name: '登录'
@@ -35,14 +35,13 @@ const routes: Array<RouteConfig> = [
   {
     path: '/main',
     component: Main,
+    meta: {
+      name: '主页面'
+    },
     children: [
       {
-        path: '/',
-        redirect: 'desigener-page'
-      },
-      {
         path: '/desigener-page',
-        name: 'desigener-page',
+        name: 'app_desigener_page',
         component: DesigenerPage,
         meta: {
           name: '编辑页面'

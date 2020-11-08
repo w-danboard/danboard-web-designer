@@ -71,7 +71,7 @@
             v-model="loginForm.username"
             placeholder="请输入用户名"
             clearable>
-            <i slot="prefix" class="icon iconfont icon-yonghuxinxi"></i>
+            <i slot="prefix" class="icon iconfont icon-yonghu"></i>
           </el-input>
         </el-form-item>
         <!-- 密码 -->
@@ -85,7 +85,7 @@
             <i slot="prefix" class="icon iconfont icon-mima"></i>
             <i
               slot="suffix"
-              :class="['icon', 'iconfont', passwordEye ? 'icon-jurassic_loseeyes' : 'icon-jurassic_openeyes']"
+              :class="['icon', 'iconfont', passwordEye ? 'icon-biyan' : 'icon-szp-eay']"
               @click="changePwdEye">
             </i>
           </el-input>
@@ -114,7 +114,7 @@ interface rules {
   password: Array<object>
 }
 
-@Component({})
+@Component
 export default class app_login extends Vue {
 
   // *********** data部分 ***********
@@ -649,9 +649,6 @@ export default class app_login extends Vue {
         }        
       }
       /* 重置样式 */
-      .iconfont {
-        font-size: 20px;
-      }
       >>> .el-button {
         width: 100%;
       }

@@ -1,0 +1,11 @@
+:root {
+
+  /******* 颜色相关 *******/
+  --white: #fff;
+
+  /******* 边距相关 *******/
+  --margin-mini: 5px;
+  --margin-small: 10px;
+  --margin-medium: 15px;
+  --margin-large: 20px;
+}
