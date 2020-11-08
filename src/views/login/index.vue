@@ -65,6 +65,7 @@
       </div>
       <!-- model为表单数据对象 -->
       <el-form ref="loginForm" :rules="rules" :model="loginForm" label-width="0">
+        <!-- 用户名 -->
         <el-form-item prop="username">
           <el-input
             v-model="loginForm.username"
@@ -73,6 +74,7 @@
             <i slot="prefix" class="icon iconfont icon-yonghuxinxi"></i>
           </el-input>
         </el-form-item>
+        <!-- 密码 -->
         <el-form-item prop="password">
           <el-input
             v-model="loginForm.password"
@@ -88,6 +90,7 @@
             </i>
           </el-input>
         </el-form-item>
+        <!-- 登录按钮 -->
         <el-form-item>
           <el-button class="large-button" type="primary" :loading="loading" @click="submit('loginForm')">登录</el-button>
         </el-form-item>
@@ -95,59 +98,80 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
 // import api from './api/index';
-export default {
-  name: 'app-login',
-  // mixins: [ api ],
-  data() {
-    return {
-      isShow: true,
-      passwordEye: false,
-      passwordType: 'password',
-      loading: false,
-      loginForm: {
-        username: '',
-        password: ''
-      },
-      rules: {
-        username: [
-          { required: true, message: '请输入用户名', trigger: 'blur' },
-        ],
-        password: [
-          { required: true, message: '请输入密码', trigger: 'blur' },
-        ]
-      }
-    }
-  },
-  methods: {
-    // 切换密码眼睛
-    changePwdEye() {
-      this.passwordEye = !this.passwordEye
-      this.passwordType = this.passwordEye ? 'text' : 'password'
-    },
-    focusPassword() {
-      this.isShow = false
-    },
-    blurPassword() {
-      this.isShow = true
-    },
-    submit(form) {
-      console.log(form)
-      // this.$refs[form].validate(async valid => {
-      //   if (valid) {
-      //     let loginForm = this.loginForm;
-      //     let password = this.$md5(loginForm.password);
-      //     this.loading = true;
-      //     await this.login({
-      //       ...loginForm,
-      //         password
-      //     })
-      //   } else {
-      //     return false;
-      //   }
-      // })
-    }
+import { Vue, Component } from 'vue-property-decorator';
+
+// 登录表单
+interface loginForm {
+  username: String,
+  password: String
+}
+
+// 登录表单验证
+interface rules {
+  username: Array<object>,
+  password: Array<object>
+}
+
+@Component({})
+export default class app_login extends Vue {
+
+  // *********** data部分 ***********
+
+  isShow: Boolean = true;             // 判断输入密码时小狗是否挡眼
+  loading: Boolean = false;           // 登录按钮loading状态
+  passwordEye: Boolean = false;       // 密码输入框眼睛图标切换
+  passwordType: String = 'password';  // 密码输入框显示text||password
+  // 登录表单
+  loginForm: loginForm = {
+    username: '',
+    password: ''
+  }
+  // 表单验证
+  rules: rules = {
+    username: [
+      { required: true, message: '请输入用户名', trigger: 'blur' }
+    ],
+    password: [
+      { required: true, message: '请输入密码', trigger: 'blur' }
+    ]
+  }
+
+  // *********** methods部分 ***********
+
+  // 切换密码眼睛
+  changePwdEye () :void {
+    this.passwordEye = !this.passwordEye
+    this.passwordType = this.passwordEye ? 'text' : 'password'
+  }
+
+  // 触发密码输入框focus事件
+  focusPassword () :void {
+    this.isShow = false
+  }
+
+  // 密码输入框失去焦点
+  blurPassword () :void {
+    this.isShow = true
+  }
+
+  // 触发登录
+  submit (form: String) {
+    console.log(form)
+    // this.$refs[form].validate(async valid => {
+    //   if (valid) {
+    //     let loginForm = this.loginForm;
+    //     let password = this.$md5(loginForm.password);
+    //     this.loading = true;
+    //     await this.login({
+    //       ...loginForm,
+    //         password
+    //     })
+    //   } else {
+    //     return false;
+    //   }
+    // })
   }
 }
 </script>
@@ -157,6 +181,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* 登录表单 */
     .login {
       position: relative;
       width: 380px;
