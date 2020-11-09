@@ -191,7 +191,10 @@ export default class app_admin extends Vue {
     /* 分页 */
     & .pagination {
       text-align: center;
-      margin-top: var(--margin-medium);
+      border: 1px solid #ebeef5;
+      border-top: none;
+      padding-top: var(--margin-medium);
+      padding-bottom: var(--margin-medium);
     }
   }
 </style>
