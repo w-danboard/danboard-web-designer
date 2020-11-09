@@ -40,7 +40,7 @@ const routes: Array<RouteConfig> = [
     },
     children: [
       {
-        path: 'admin',
+        path: '/admin',
         name: 'app_admin',
         component: Admin,
         meta: {
@@ -48,7 +48,7 @@ const routes: Array<RouteConfig> = [
         }
       },
       {
-        path: 'desigener-page',
+        path: '/desigener-page',
         name: 'app_desigener_page',
         component: DesigenerPage,
         meta: {
