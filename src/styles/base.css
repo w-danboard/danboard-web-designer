@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
   font-weight: normal;
 }
-dl, dt, dd, h1, h2, h3, h4, h5, h6, ul, ol, li, p, pre, header, section, footer, aside, nav, menu, article, figure{
+html, body, dl, dt, dd, h1, h2, h3, h4, h5, h6, ul, ol, li, p, pre, header, section, footer, aside, nav, menu, article, figure{
   padding: 0;
   margin: 0;
 }
@@ -70,22 +70,7 @@ input:-webkit-autofill {
           box-sizing: border-box;
 }
 
-html {
-  height: 100%;
-  width: 100%;
-  font-size: 62.5%;     /* 10/16*100% */
-  /* 主要用来阻止移动端横屏字体变大 */
-  -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-}
 body {
-  height: 100%;
-  width: 100%;
   min-width: 1250px;
-  margin: 0;
-  line-height: 1.42857143;
   font-family: "Microsoft YaHei", "PingFang SC", "Helvetica", "Arial", "黑体", "宋体", sans-serif;
-  font-size: 1.4rem;
-  -webkit-font-smoothing: antialiased; /* 字体抗锯齿 */
-  -moz-osx-font-smoothing: grayscale; /* 字体抗锯齿 */
 }
