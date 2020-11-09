@@ -158,7 +158,7 @@
 }
 
 .el-table--medium th {
-  padding: 8px 0;
+  padding: 3px 0;
 }
 
 .el-table--medium td {
@@ -166,7 +166,7 @@
 }
 
 .el-table--small th {
-  padding: 5px 0;
+  padding: 2px 0;
 }
 
 
@@ -175,7 +175,7 @@
 }
 
 .el-table--mini th {
-  padding: 3px 0;
+  padding: 1px 0;
 }
 
 .el-table--mini td {

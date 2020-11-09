@@ -21,7 +21,7 @@
         </el-select>
       </el-form-item>
       <el-form-item>
-        <el-input v-model="searchForm.user" placeholder="请输入页面urlKey"></el-input>
+        <el-input v-model="searchForm.user" placeholder="请输入页面URLKEY"></el-input>
       </el-form-item>
       <el-form-item>
         <el-input v-model="searchForm.user" placeholder="请输入页面名称"></el-input>
@@ -36,48 +36,97 @@
     </el-form>
     <!-- 按钮组 -->
     <div class="button-group">
-      <el-button type="success" icon="el-icon-s-promotion">发布</el-button>
+      <el-button type="warning" icon="el-icon-s-promotion">发布</el-button>
       <el-button type="primary" icon="el-icon-folder-add">新建</el-button>
     </div>
     <!-- 列表 -->
     <el-table
-    :data=" [{
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }]"
+    :data="tableData"
     stripe
     border
     height="100%"
     tooltip-effect="dark"
     :default-sort = "{prop: 'date', order: 'descending'}">
       <el-table-column
-        prop="date"
-        label="日期"
-        sortable
-        width="180">
+        type="selection"
+        align="center"
+        width="50">
+      </el-table-column>
+      <el-table-column
+        prop="urlKey"
+        label="URLKEY"
+        align="center"
+        show-overflow-tooltip
+        sortable>
       </el-table-column>
       <el-table-column
         prop="name"
-        label="姓名"
-        sortable
-        width="180">
+        label="页面名称"
+        align="center"
+        show-overflow-tooltip
+        sortable>
       </el-table-column>
       <el-table-column
-        prop="address"
-        label="地址">
+        prop="title"
+        label="页面标题"
+        align="center"
+        show-overflow-tooltip
+        sortable>
+      </el-table-column>
+      <el-table-column
+        prop="state"
+        label="页面状态"
+        align="center"
+        show-overflow-tooltip
+        sortable>
+      </el-table-column>
+      <el-table-column
+        prop="author"
+        label="创建人"
+        align="center"
+        show-overflow-tooltip
+        sortable>
+      </el-table-column>
+      <el-table-column
+        prop="createTime"
+        label="创建时间"
+        align="center"
+        show-overflow-tooltip
+        sortable>
+      </el-table-column>
+      <el-table-column
+        prop="expirationTime"
+        label="过期时间"
+        align="center"
+        show-overflow-tooltip
+        sortable>
+      </el-table-column>
+      <el-table-column
+        label="操作"
+        align="center"
+        width="180">
+        <template slot-scope="scope">
+          <!-- 复制链接 -->
+          <el-tooltip content="复制链接" placement="top">
+            <el-button type="text" icon="el-icon-copy-document" class="operation-button"></el-button>
+          </el-tooltip>
+          <!-- 编辑 -->
+          <el-tooltip content="编辑" placement="top">
+            <el-button type="text" icon="el-icon-edit" class="operation-button"></el-button>
+          </el-tooltip>
+          <!-- 预览 -->
+          <el-tooltip content="预览" placement="top">
+            <el-button type="text" icon="el-icon-view" class="operation-button"></el-button>
+          </el-tooltip>
+          <!-- 删除 -->
+          <el-tooltip content="删除" placement="top">
+            <el-button type="text" icon="el-icon-delete" class="operation-button"></el-button>
+          </el-tooltip>
+          <!-- 暂停使用 -->
+          <el-tooltip content="暂停使用" placement="top" class="operation-button">
+            <el-button type="text" icon="el-icon-video-pause"></el-button>
+          </el-tooltip>
+        </template>
       </el-table-column>
     </el-table>
     <!-- 分页 -->
@@ -115,6 +164,8 @@ export default class app_admin extends Vue {
     name: '',
     title: ''
   }
+
+  tableData: Array<object> = [{name: '页面名称'}]
 }
 </script>
 
@@ -188,13 +239,22 @@ export default class app_admin extends Vue {
       margin-bottom: var(--margin-medium);
     }
 
+    /* 列表 */
+    & >>> .operation-button {
+      padding: 0;
+      & i {
+        transform: scale(1.2);
+        padding: 0 2px;
+      }
+    }
+
     /* 分页 */
     & .pagination {
       text-align: center;
       border: 1px solid #ebeef5;
       border-top: none;
-      padding-top: var(--margin-medium);
-      padding-bottom: var(--margin-medium);
+      padding-top: var(--margin-small);
+      padding-bottom: var(--margin-small);
     }
   }
 </style>

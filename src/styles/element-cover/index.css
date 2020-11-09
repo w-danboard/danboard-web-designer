@@ -10,3 +10,5 @@
 @import './table.css'; 
 /* 分页样式覆盖 */
 @import './pagination.css'; 
+/* tooltip样式覆盖 */
+@import './tooltip.css'; 
