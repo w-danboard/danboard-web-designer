@@ -9,9 +9,9 @@ const Login = () =>
 const Main = () =>
 import('@/views/main/index.vue')
 
-// 测试页面
-const Test = () =>
-import('@/views/test.vue')
+// 首页
+const Admin = () =>
+import('@/views/admin/index.vue')
 
 // 编辑页面
 const DesigenerPage = () =>
@@ -40,19 +40,19 @@ const routes: Array<RouteConfig> = [
     },
     children: [
       {
-        path: '/desigener-page',
+        path: 'admin',
+        name: 'app_admin',
+        component: Admin,
+        meta: {
+          name: '首页'
+        }
+      },
+      {
+        path: 'desigener-page',
         name: 'app_desigener_page',
         component: DesigenerPage,
         meta: {
           name: '编辑页面'
-        }
-      },
-      {
-        path: '/test',
-        name: 'test',
-        component: Test,
-        meta: {
-          name: '测试页面'
         }
       }
     ]

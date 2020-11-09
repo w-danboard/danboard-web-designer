@@ -4,9 +4,10 @@
     <vue-progress-bar></vue-progress-bar>
     <!-- 头部 -->
     <app-header></app-header>
-    我是主页面
     <!-- 页面 -->
-    <router-view :key="key"></router-view>
+    <div class="container">
+      <router-view :key="key"></router-view>
+    </div>
   </div>
 </template>
 
@@ -31,7 +32,7 @@ export default class app_main extends Vue {
   
   // *********** data部分 ***********
 
-  key: String = ''; // 路由key
+  key: string = ''; // 路由key
   $Progress : any = {}
 
   // *********** mounted部分 ***********
@@ -49,3 +50,15 @@ export default class app_main extends Vue {
 
 }
 </script>
+
+<style lang="postcss" scoped>
+  .add-main {
+    /* hearder高度 */
+    height: calc(100% - 56px);
+    margin-top: 56px;
+    overflow-y: auto;
+    & .container {
+      
+    }
+  }
+</style>

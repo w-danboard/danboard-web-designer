@@ -7,11 +7,10 @@
     </div>
     <!-- 个人中心 -->
     <div class="user">
-      <i class="iconfont icon-yonghu avatar-icon"></i>
-      <el-dropdown trigger="click" @command="">
+      <el-dropdown trigger="click" @command="handleCommand">
         <span class="el-dropdown-link">
-          <!-- {{$store.getters.user.name }} -->
-          aa
+          <i class="iconfont icon-yonghu avatar-icon"></i>
+          {{$store.getters.user.name }}
           <i class="el-icon-caret-bottom el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
@@ -26,7 +25,9 @@ import { Vue, Component } from 'vue-property-decorator';
 
 @Component
 export default class app_header extends Vue {
-
+  handleCommand () {
+    console.log('handleCommand')
+  }
 }
 </script>
 <style lang="postcss" scoped>
@@ -43,14 +44,16 @@ export default class app_header extends Vue {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     z-index: 999;
 
+    /* logo */
     & .logo-wrap {
-      width: 220px;
+      width: 230px;
       background: #2f323d;
+      padding-left: 1px;
 
       & .logo-icon {
         display: inline-block;
         vertical-align: middle;
-        margin-left: var(--margin-mini);
+        margin: 0 var(--margin-mini);
       }
 
       & .logo-text {
@@ -59,6 +62,16 @@ export default class app_header extends Vue {
         color: var(--white);
         font-size: 15px;
         font-weight: 700;
+      }
+    }
+
+    /* 个人中心 */
+    & .user {
+      padding-right: var(--padding-medium);
+      cursor: pointer;
+
+      & .avatar-icon {
+        padding-right: var(--padding-mini);
       }
     }
   }

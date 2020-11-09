@@ -70,6 +70,7 @@
           <el-input
             v-model="loginForm.username"
             placeholder="请输入用户名"
+            size="medium"
             clearable>
             <i slot="prefix" class="icon iconfont icon-yonghu"></i>
           </el-input>
@@ -80,19 +81,23 @@
             v-model="loginForm.password"
             :type="passwordType"
             placeholder="请输入密码"
+            size="medium"
             @focus="focusPassword"
             @blur="blurPassword">
             <i slot="prefix" class="icon iconfont icon-mima"></i>
-            <i
-              slot="suffix"
-              :class="['icon', 'iconfont', passwordEye ? 'icon-biyan' : 'icon-szp-eay']"
-              @click="changePwdEye">
+            <i slot="suffix"
+               :class="['icon', 'iconfont', passwordEye ? 'icon-biyan' : 'icon-szp-eay']"
+               @click="changePwdEye">
             </i>
           </el-input>
         </el-form-item>
         <!-- 登录按钮 -->
         <el-form-item>
-          <el-button class="large-button" type="primary" :loading="loading" @click="submit('loginForm')">登录</el-button>
+          <el-button class="large-button" 
+            type="primary" 
+            :loading="loading"
+            size="medium"
+            @click="submit('loginForm')">登录</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -104,8 +109,8 @@ import { Vue, Component } from 'vue-property-decorator';
 
 // 登录表单
 interface loginForm {
-  username: String,
-  password: String
+  username: string,
+  password: string
 }
 
 // 登录表单验证

@@ -3,7 +3,13 @@
   /******* 颜色相关 *******/
   --white: #fff;
 
-  /******* 边距相关 *******/
+  /******* 内边距相关 *******/
+  --padding-mini: 5px;
+  --padding-small: 10px;
+  --padding-medium: 15px;
+  --padding-large: 20px;
+
+  /******* 外边距相关 *******/
   --margin-mini: 5px;
   --margin-small: 10px;
   --margin-medium: 15px;

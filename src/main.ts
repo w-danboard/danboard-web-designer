@@ -13,6 +13,7 @@ import '@/assets/fonts/iconfont.css' 					 // 图标字体
 import '@/assets/_fonts/iconfont.css' 				 // 图标字体[私有]
 import '@/styles/base.css'                     // 公共样式
 import '@/styles/common.css'                   // 统一边距颜色样式
+import '@/styles/element-cover/index.css'      // element-ui样式覆盖
 
 Vue.config.productionTip = false
 
