@@ -190,7 +190,7 @@ export default class app_admin extends Vue {
          text-align: center;
          width: 68px;
          height: 68px;
-         padding-top: 12px;
+         padding-top: 16px;
          border-radius: 50%;
          border: 1px solid rgba(255,255,255, .2);
          margin-right: var(--margin-medium);

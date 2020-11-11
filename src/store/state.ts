@@ -1,7 +1,7 @@
 const state = {
   // 当前用户名
   user: {
-    name: '毛驴'
+    name: '李炸毛'
   }
 }
 
